@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "start":"node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,12 @@
   },
   "homepage": "https://github.com/GSG-G10/Rawand-Reddit#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "env2": "^2.2.2",
+    "express": "^4.17.1",
+    "jest": "^27.0.6",
+    "pg": "^8.7.1",
+    "supertest": "^6.1.6"
   }
 }
