@@ -4,7 +4,7 @@ CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(100),
     password VARCHAR(100),
-       email VARCHAR(100) UNIQUE
+       email VARCHAR(100)
 );
 CREATE TABLE post (
     id SERIAL PRIMARY KEY,
@@ -15,9 +15,9 @@ CREATE TABLE post (
 CREATE TABLE comment (
     id SERIAL PRIMARY KEY,
     content VARCHAR(100),
-    post_id INTEGER REFERENCES post(id),
-    user_id INTEGER  REFERENCES users(id)
+    post_id INTEGER REFERENCES post(id)  
 );
-
+INSERT INTO users (name,password,email) VALUES ('RAWANDHOSAM','159','RAAND@gmail.com');
+INSERT INTO post(title,discription,user_id) VALUES ('RAWAND','ONJHGVFCGHBJ',1);
 
 COMMIT;
