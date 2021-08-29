@@ -8,6 +8,50 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="btn-parent">
+        <button class="btn" id="open-button" onclick="openForm()">
+          Add Post
+        </button>
+      </div>
+      <!-- to show data from data base  -->
+      <div class="content"></div>
+    </main>
+
+    <div class="form-popup" id="myForm">
+      <form action="/post-data" class="form-container" method='POST'>
+        <h3 class= 'form-title'>Add Post</h1>
+
+        <label for="title"><b>titel</b></label>
+        <input
+          type="text"
+          placeholder="Enter title"
+          name="title"
+          id="title"
+          required
+        />
+
+        <label for="discription"><b>discription</b></label>
+        <input
+          type="text"
+          placeholder="Enter discription"
+          name="discription"
+          id="discription"
+          required
+        />
+        <label for="image"><b>image</b></label>
+        <input
+          type="text"
+          placeholder="Enter Painting Url"
+          name="image"
+          id="image"
+          required
+        />
+
+        <button type="submit" class="btn add-post" onclick="closeForm()">Add</button>
+      </form>
+    </div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/fetch.js"></script>
 </body>
 </html>
