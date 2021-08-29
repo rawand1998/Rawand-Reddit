@@ -10,7 +10,8 @@ CREATE TABLE post (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100),
     discription VARCHAR(500),
-     user_id INTEGER  REFERENCES users(id)  
+    user_id INTEGER  REFERENCES users(id),
+     image TEXT
 );
 CREATE TABLE comment (
     id SERIAL PRIMARY KEY,
@@ -18,6 +19,6 @@ CREATE TABLE comment (
     post_id INTEGER REFERENCES post(id)  
 );
 INSERT INTO users (name,password,email) VALUES ('RAWANDHOSAM','159','RAAND@gmail.com');
-INSERT INTO post(title,discription,user_id) VALUES ('RAWAND','ONJHGVFCGHBJ',1);
+INSERT INTO post(title,discription,user_id,image) VALUES ('RAWAND','ONJHGVFCGHBJ',1,'hhh');
 
 COMMIT;

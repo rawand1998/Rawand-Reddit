@@ -1,6 +1,7 @@
 const connection = require('../connection')
-const getData = ()=>{
-const sql = 'SELECT * FROM post INNER JOIN users ON (post.user_id = users.id);';
-console.log(sql)
-return connection.query(sql).then((data)=>data.rows).catch((error)=>error)}
-module.exports=getData
+const getData = (name)=>{
+    const text ='SELECT * FROM post INNER JOIN users WHERE user.name=name ON (post.user_id = users.id);'
+    return connection.query(text).then((data)=>data.rows).catch((error)=>error)
+};
+
+module.exports=getData;
