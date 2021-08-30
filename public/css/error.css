@@ -1,0 +1,15 @@
+.title-error{
+    text-align: center;
+    padding-top: 70px;
+    color: crimson;
+    font-family: cursive;
+    font-size: 60px;
+}
+.discribe-error
+{
+    text-align: center;
+
+    color: rgb(233, 14, 58);
+    font-family: cursive;
+    font-size: 30px;
+}
