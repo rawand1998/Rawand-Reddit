@@ -6,7 +6,8 @@ const router = require('express').Router();
  const comparePassword  = require('../utils/comparePassword')
  const hashPassword = require('../utils/hashedPassword')
 // const {signUpValiadtion} = require('../utils/valiadtion/signUpValiadtion')
-const {getData ,postData ,signHandle,signUpHandel}= require('../database/queries/index')
+const {getData ,postData ,signHandle,signUpHandel}= require('../database/queries/index');
+const { rmdirSync } = require('fs');
 
 
 
@@ -82,5 +83,14 @@ router.post('/sign-up',(req,res)=>{
       }
     });
  // }
+})
+router.get('/404',(req,res)=>{
+  res.sendFile(join(__dirname,'..','..','public','404.html'))
+})
+router.get('/500',(req,res)=>{
+  res.sendFile(join(__dirname,'..','..','public','500.html'))
+})
+router.get('/400',(req,res)=>{
+  res.sendFile(join(__dirname,'..','..','public','400.html'))
 })
 module.exports =router;
