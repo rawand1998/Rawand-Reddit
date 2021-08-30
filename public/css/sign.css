@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    width: 93%;
+  }
+  .ihsan-logo {
+    font-family: cursive;
+    color: darkgreen;
+    text-indent: 10px;
+  }
+  .site-header__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: space-around;
+  }
+  .btn-sign {
+     background: rgb(0, 121, 211);
+    border: none;
+    border-radius: 24px;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #fff;
+    color: #fff;
+    margin-right: 15px;
+  }
+  .btn-sign:hover {
+  background: rgb(28, 104, 161);;
+      color: #fff; 
+      transform: scale(1.1);
+  }
+  .image {
+    width: 50px;
+  }
+  .sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100vh;
+    opacity: 0.9;
+  }
+  
+  .login {
+    text-align: center;
+    color: #000;
+    font-family: cursive;
+    font-size: 25px;
+  }
+  
+  label {
+    padding-top: 20px;
+    color: #000;
+    height: 4vh;
+    width: 75%;
+    font-weight: 900;
+  }
+  .form-desgin {
+    height: 90%;
+ border: 1px solid #777;
+    opacity: .9;
+    border-radius: 10px;
+  }
+  .form-desgin form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+  }
+  .from {
+    width: 40%;
+    height: 70vh;
+  
+    opacity: .9;
+    border-radius: 10px;
+  
+  }
+  h3{
+    color: #000;
+      height: 12vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .from input {
+    text-align: left;
+    text-indent: 10px;
+    border: #000 solid 1px;
+    border-radius: 10px;
+    height: 6vh;
+    margin-bottom: 5vh;
+    width: 75%;
+    
+  }
+  .from button {
+    background: rgb(0, 121, 211);
+    border: none;
+    border-radius: 10px;
+    width: 15vh;
+    height: 7vh;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+  }
+  .from button:hover {
+    background-color: rgb(28, 104, 161);
+    color: #fff;
+  } 
+  .label{
+    padding-bottom: 25px;
+  }
+  h3:first-child{
+      margin-top: -5px;
+  }
+  h3 a{
+      text-indent: 10px;
+      color: #000;
+  }
+  #passError{
+    color: #9c0303;
+      font-size: .8rem;
+      margin-top: -15px;
+      margin-bottom: .59rem;
+      font-weight: bolder;
+  }
+  
