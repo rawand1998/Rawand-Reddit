@@ -25,9 +25,16 @@ router.get('/post', (req, res) => {
 
   
 router.post('/post-data', (req, res) => {
-postData(req.body.title,req.body.discription,req.body.image)
+  const cookies = req.cookies.access_token;
+   
+  const decoded = jwt.decode(cookies);
+  console.log(decoded)
+  const user_id =decoded.id;
+ 
+postData(req.body.title,req.body.discription,user_id,req.body.image)
+
     .then(()=>res.redirect('/'))
-    .catch(()=>{console.log(111)})
+    .catch((error)=>{console.log(error)})
 });
 router.get('/sign-in',(req,res)=>{
   res.sendFile(join(__dirname,'..','..','public','sign-in.html'))
@@ -39,17 +46,19 @@ if(error){
   res.sendFile(join(__dirname, '..', '..', 'public', '400.html'));
 }else{
   signHandle(email).then(( {rows}) => {
+  
     
     if (!rows.length) {
       res.cookie('error', 'You\'ve entered an unvalid email');
       res.redirect('/sign-in');
     } else {
-     const { name, password: hashPass } = rows[0];
+     const { id,name, password: hashPass } = rows[0];
     
       comparePassword(password, hashPass, (err, isMatchPass) => {
       if (isMatchPass) {
        sign(
-         {name, email}, process.env.secretKey, (err, token) => {
+         {id,name, email }, process.env.secretKey, (err, token) => {
+           
            res
                 .cookie('access_token', token, {
                    httpOnly: true,

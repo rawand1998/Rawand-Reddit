@@ -10,7 +10,7 @@ CREATE TABLE post (
     id SERIAL PRIMARY KEY,
     title VARCHAR(100),
     discription VARCHAR(500),
-    user_id INTEGER  REFERENCES users(id),
+    user_id INT REFERENCES users(id),
      image TEXT
 );
 CREATE TABLE comment (
