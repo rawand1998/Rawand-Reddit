@@ -4,13 +4,14 @@ const fetch = require('node-fetch')
 const { sign  } = require('jsonwebtoken');
 const jwt = require('jsonwebtoken');
 const router = require('express').Router();
-// const {comparePassword,hashPassword,auth} = require('../utils/index')
+
  const comparePassword  = require('../utils/comparePassword')
  const hashPassword = require('../utils/hashedPassword')
  const auth = require('./utiles/authHandle')
-// const {signUpValiadtion} = require('../utils/valiadtion/signUpValiadtion')
+ const signUpValiadtion = require('../utils/valiadtion/signUpValiadtion')
+ const signinValiadtion = require('../utils/valiadtion/signInValiadtion')
 const {getData ,postData ,signHandle,signUpHandel}= require('../database/queries/index');
-const { rmdirSync } = require('fs');
+
 
 
 
@@ -33,7 +34,10 @@ router.get('/sign-in',(req,res)=>{
 })
 router.post('/sign-in',(req,res)=>{
   const { email, password } = req.body;
-
+const {error,value}=signinValiadtion.validate({email,password});
+if(error){
+  res.sendFile(join(__dirname, '..', '..', 'public', '400.html'));
+}else{
   signHandle(email).then(( {rows}) => {
     
     if (!rows.length) {
@@ -60,16 +64,17 @@ router.post('/sign-in',(req,res)=>{
        });
    }
    });
+  }
 });
 router.get('/sign-up',(req,res)=>{
   res.sendFile(join(__dirname,'..','..','public','sign-up.html'))
 })
 router.post('/sign-up',(req,res)=>{
   const { name, password, email } = req.body;
- // const { error, value } = signUpValiadtion.validate({ name, password, email });
-  // if (error) {
-  //   res.sendFile(join(__dirname, '..', '..', 'public', 'html', '400.html'));
-  // } else {
+ const { error, value } = signUpValiadtion.validate({ name, password, email });
+  if (error) {
+    res.sendFile(join(__dirname, '..', '..', 'public', '400.html'));
+  } else {
     hashPassword(password, (err, hashedPassword) => {
       if (err) {
         next(err);
@@ -82,7 +87,7 @@ router.post('/sign-up',(req,res)=>{
           });
       }
     });
- // }
+ }
 })
 router.get('/404',(req,res)=>{
   res.sendFile(join(__dirname,'..','..','public','404.html'))
