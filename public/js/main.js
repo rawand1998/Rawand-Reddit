@@ -1,6 +1,9 @@
 
 const cardsContainer = document.querySelector('.content');
 const navBar = document.querySelector('.nav-bar');
+const form = document.querySelector('form');
+const error = document.querySelector('.error')
+const password = document.querySelector('#password')
 const createElement = (tag, className, parentNode) => {
   const tagName = document.createElement(tag);
   tagName.classList.add(className);
@@ -36,3 +39,12 @@ const createNavBar = (title) => {
   navBar.appendChild(logOut);
   navBar.appendChild(username);
 };
+form.addEventListener('submit',(e)=>{
+  if (password.value.length < 6) {
+    e.preventDefault();
+    error.textContent = 'PASSWORD SHOULD BE 6 CHARACTERS AT LEAST';
+   
+  } else {
+    password.style.border = '1px solid #827e7e';
+  }
+})

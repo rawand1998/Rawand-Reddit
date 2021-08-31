@@ -84,7 +84,7 @@
   }
   .from {
     width: 40%;
-    height: 70vh;
+    height: 75vh;
   
     opacity: .9;
     border-radius: 10px;
@@ -132,11 +132,9 @@
       text-indent: 10px;
       color: #000;
   }
-  #passError{
-    color: #9c0303;
-      font-size: .8rem;
-      margin-top: -15px;
-      margin-bottom: .59rem;
-      font-weight: bolder;
+ 
+  .error{
+    color: #f00;
+    font-size: 15px;
+    padding-bottom: 15px;
   }
-  
