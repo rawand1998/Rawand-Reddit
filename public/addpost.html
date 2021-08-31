@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-popup" id="myForm">
+        <form action="/post-data" class="form-container" method='POST'>
+          <h3 class= 'form-title'>Add Post</h1>
+  
+          <label for="title"><b>titel</b></label>
+          <input
+            type="text"
+            placeholder="Enter title"
+            name="title"
+            id="title"
+            required
+          />
+  
+          <label for="discription"><b>discription</b></label>
+          <input
+            type="text"
+            placeholder="Enter discription"
+            name="discription"
+            id="discription"
+            required
+          />
+          <label for="image"><b>image</b></label>
+          <input
+            type="text"
+            placeholder="Enter Painting Url"
+            name="image"
+            id="image"
+            required
+          />
+  
+          <button type="submit" class="btn add-post" onclick="closeForm()">Add</button>
+        </form>
+</body>
+</html>

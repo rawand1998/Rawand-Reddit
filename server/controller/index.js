@@ -1,10 +1,13 @@
 const express = require('express')
 const {join}= require('path')
 const fetch = require('node-fetch')
-const { sign } = require('jsonwebtoken');
+const { sign  } = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const router = require('express').Router();
+// const {comparePassword,hashPassword,auth} = require('../utils/index')
  const comparePassword  = require('../utils/comparePassword')
  const hashPassword = require('../utils/hashedPassword')
+ const auth = require('./utiles/authHandle')
 // const {signUpValiadtion} = require('../utils/valiadtion/signUpValiadtion')
 const {getData ,postData ,signHandle,signUpHandel}= require('../database/queries/index');
 const { rmdirSync } = require('fs');
@@ -28,38 +31,35 @@ postData(req.body.title,req.body.discription,req.body.image)
 router.get('/sign-in',(req,res)=>{
   res.sendFile(join(__dirname,'..','..','public','sign-in.html'))
 })
-router.post('/sign-in',(req,res,next)=>{
+router.post('/sign-in',(req,res)=>{
   const { email, password } = req.body;
 
-  signHandle(email).then(({ rows }) => {
+  signHandle(email).then(( {rows}) => {
+    
     if (!rows.length) {
       res.cookie('error', 'You\'ve entered an unvalid email');
       res.redirect('/sign-in');
     } else {
-      const { name, password: hashPass } = rows[0];
+     const { name, password: hashPass } = rows[0];
+    
       comparePassword(password, hashPass, (err, isMatchPass) => {
-        if (isMatchPass) {
-          sign(
-            {
-              name,
-              email,
-            },
-            process.env.secretKey,
-            (err, token) => {
-              res
+      if (isMatchPass) {
+       sign(
+         {name, email}, process.env.secretKey, (err, token) => {
+           res
                 .cookie('access_token', token, {
-                  httpOnly: true,
-                })
-                .redirect('/');
-            },
+                   httpOnly: true,
+                 })
+                 .redirect('/');
+             },
           );
-        } else {
-          res.cookie('error', 'You\'ve entered a wrong password');
-          res.redirect('/sign-in');
+       } else {
+           res.cookie('error', 'You\'ve entered a wrong password');
+           res.redirect('/sign-in');
         }
-      });
-    }
-  });
+       });
+   }
+   });
 });
 router.get('/sign-up',(req,res)=>{
   res.sendFile(join(__dirname,'..','..','public','sign-up.html'))
@@ -74,7 +74,7 @@ router.post('/sign-up',(req,res)=>{
       if (err) {
         next(err);
       } else {
-        signUpHandel(name, hashedPassword, email)
+        signUpHandel(name, email,hashedPassword, )
           .then(() => res.redirect('/sign-in'))
           .catch(() => {
             res.cookie('error', 'This email already used');
@@ -93,4 +93,18 @@ router.get('/500',(req,res)=>{
 router.get('/400',(req,res)=>{
   res.sendFile(join(__dirname,'..','..','public','400.html'))
 })
+router.get('/form-add',(req,res)=>{
+  res.sendFile(join(__dirname,'..','..','public','addpost.html'))
+})
+router.get('/check-user', auth, (req, res) => {
+    const cookies = req.cookies.access_token;
+   
+    const decoded = jwt.decode(cookies);
+    
+    res.json(decoded.name);
+  });
+  router.get('/logout',(req,res)=>{
+    res.clearCookie('access_token');
+    res.redirect('/');
+  })
 module.exports =router;
