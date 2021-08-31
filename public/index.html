@@ -6,49 +6,101 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <section>
+    <header class="header">
+      <div class="wrapper site-header__wrapper">
+        <h1 class="reddit-logo">reddit</h1>
+      </div>
+    <div>
+      <input type="text" placeholder="Search Reddit" class="search">
+    </div>
+      <nav class="nav-bar">
+        <a href="/sign-in" class="btn-sign active">Sign In</a>
+        <a href="/sign-up" class="btn-sign">Sign Up</a>
+      </nav>
+    </header>
+  </section>
+  <section class="trending">
+    <p class="trending-today">Trending today</p>
+    <div class="conatiner">
+     
+      <div class=" block block1">
+        <div class="overlay">
+        <h3 class="title-name">Loines Messi</h3>
+        <p>No lie, I enjoyed Kid Rock one<br>upon a time, this last decade of watching him become Ted Nugent lite .....</p>
+      <span class="src-span">r/LeopardsAteMyFace and more</span>
+      </div>
+      </div>
+     
+      <div class="block block2">
+        <div class="overlay">
+        <h3 class="title-name">Kid Rock</h3>
+        <p>No lie, I enjoyed Kid Rock one <br>upon a time, this last decade of watching him become Ted Nugent lite .......</p>
+      <span class="src-span">r/LeopardsAteMyFace and more</span>
+      </div>
+      </div>
+      
+      <div class="block block3">
+        <div class="overlay">
+        <h3 class="title-name">Loines Messi</h3>
+        <p>No lie, I enjoyed Kid Rock one<br> upon a time, this last decade of watching him become Ted Nugent lite ........</p>
+      <span class="src-span">r/LeopardsAteMyFace and more</span>
+      </div>
+      </div>
+     
+      <div class="block block4">
+        <div class="overlay">
+
+       
+        <h3 class="title-name">Loines Messi</h3>
+        <p>No lie, I enjoyed Kid Rock one<br>upon a time, this last decade of watching him become Ted Nugent lite ........</p>
+      <span class="src-span">r/LeopardsAteMyFace and more</span>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
     <div class="btn-parent">
+      <form action="/form-add">
+
         <button class="btn" id="open-button" onclick="openForm()">
           Add Post
         </button>
+      </form>
       </div>
       <!-- to show data from data base  -->
-      <div class="content"></div>
+      <section class="Popular-posts">
+        <div class="post-content">
+          <div class="post-navbar">
+                <nav class="popular-nav">
+                  <i class="fab fa-hotjar"></i>  <li class="hot">Hot</li>
+                  <li>EveryWhere</li>
+                  <li>New</li>
+                  <li>Top</li>
+                  <li>...</li>
+                </nav>
+          </div><br>
+          <div class="content">
+            <!-- <div class="posts">
+              <h3 class="user_id">rawand jaradh</h3>
+            <h3 class="title">how can add image to</h3>
+            <p class="discription">cdlcmdjvcdbcjklnhdjbcbedhbfckedbhcfedcwhebghdgbweghdohe</p>
+            <img src="https://media.self.com/photos/5ea9f52ea469834e6f5489e6/1:1/w_3204,h_3204,c_limit/peony_flowers_bouquet.jpg" alt="" class="image">
+            
+          </div>
+        </div> -->
+        </div>
+
+        <div class="vv">cdcdc</div>
+      </section>
+    
     </main>
 
-    <div class="form-popup" id="myForm">
-      <form action="/post-data" class="form-container" method='POST'>
-        <h3 class= 'form-title'>Add Post</h1>
-
-        <label for="title"><b>titel</b></label>
-        <input
-          type="text"
-          placeholder="Enter title"
-          name="title"
-          id="title"
-          required
-        />
-
-        <label for="discription"><b>discription</b></label>
-        <input
-          type="text"
-          placeholder="Enter discription"
-          name="discription"
-          id="discription"
-          required
-        />
-        <label for="image"><b>image</b></label>
-        <input
-          type="text"
-          placeholder="Enter Painting Url"
-          name="image"
-          id="image"
-          required
-        />
-
-        <button type="submit" class="btn add-post" onclick="closeForm()">Add</button>
-      </form>
+   
     </div>
 
     <script src="./js/main.js"></script>

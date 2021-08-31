@@ -1,0 +1,216 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #ebe9e9cc;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+ padding-bottom: 7px;
+ padding-top: 5px;
+  width: 100%;
+  background-color: #fff;
+}
+.reddit-logo {
+  font-family: cursive;
+  color: #000;
+  text-indent: 10px;
+}
+.site-header__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 15%;
+}
+.btn-sign {
+  background: rgb(0, 121, 211);
+  border: none;
+  border-radius: 24px;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: #fff;
+
+ margin-left: 15px;
+ font-weight: bold;
+}
+.active{
+  background-color:  #fff;
+  color:  rgb(0, 121, 211);
+  border: 1px solid  rgb(0, 121, 211);
+}
+.search{
+  padding: 10px 60px;
+  width: 196%;
+  border: 1px solid #ddd;
+
+
+}
+.active:hover {
+    background:rgb(128, 179, 218);
+    color:rgb(0, 121, 211) ;
+    transform: scale(1.1);
+}
+
+#open-button{
+    background-color: #fff;
+    border-radius: 15px;
+    color: rgb(63, 10, 10);
+    border: 1px solid #ddd;
+    margin-left: 15px;
+    padding: 10px 20px;
+    margin-left: 7%;
+    margin-top: 2%;
+}
+.conatiner
+{
+  padding-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.block{
+margin-left: 2%;
+border: 1px solid #ddd;
+border-radius: 25px;
+padding-left: 15px;
+text-align: justify;
+height: 200px;
+padding-top: 56px;
+padding-right: 15px;
+color: #fff;
+
+}
+.trending-today{
+  text-align: center;
+  padding-top: 15px;
+  color: #000;
+  font-size: 20px;
+}
+.block1{
+ 
+  
+  background: url("https://external-preview.redd.it/MR851wj6bnt0-Y5pTUDolK8VPkxwXqnt1O-wfpwUMJc.jpg?auto=webp&s=dc5f4301b6deb14343b3a004cb752d6dece7ea65");
+  background-size: cover;
+}
+.block2{
+  background:url("https://external-preview.redd.it/woS2ZlrQtryPPgu_EJasXmfnCpXEveY3mQZjHbA_BKY.png?format=pjpg&auto=webp&s=ab353d8e5144b47dda3a689da55d57aef9af4b07") ;
+  background-size: cover;
+}
+.block3{
+  background: url("https://external-preview.redd.it/MR851wj6bnt0-Y5pTUDolK8VPkxwXqnt1O-wfpwUMJc.jpg?auto=webp&s=dc5f4301b6deb14343b3a004cb752d6dece7ea65");
+  background-size: cover;
+}
+.block4{
+  background:url("https://external-preview.redd.it/woS2ZlrQtryPPgu_EJasXmfnCpXEveY3mQZjHbA_BKY.png?format=pjpg&auto=webp&s=ab353d8e5144b47dda3a689da55d57aef9af4b07") ;
+  background-size: cover;
+}
+.title-name{
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.src-span{
+  padding-left: 15px;
+  color: #fff;
+}
+.overlay{
+   
+border-radius: 25px;
+
+
+border-radius: 25px;
+padding-left: 15px;
+text-align: justify;
+
+padding-right: 15px;
+color: #fff;
+  background-color: rgb(56 124 154 / 15%);
+}
+.Popular-posts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+
+  margin-top: 3%;
+}
+.post-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 69%;
+  margin-right: 1%;
+  margin-top: 1%;
+  
+}
+.content{
+  display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   margin-top: 1%;
+}
+.post-navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 50px;
+  padding-top: 15px;
+
+}
+.popular-nav{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+
+
+}
+.popular-nav li{
+  padding-left: 50px;
+  font-weight: bold;
+  color: rgb(158, 158, 158);
+}
+.vv{
+  background-color: salmon;
+  width: 30%;
+  height: 20px;
+}
+.image{
+width: 100%;
+height: 400px;
+}
+.title{
+font-weight: 208;
+color: rgb(0, 0, 0);
+padding-bottom: 15px;
+}
+.posts{
+border: 1px solid #777;
+padding-left: 15px;
+padding-right: 15px;
+}
+.discription{
+font-weight: 208;
+font-size: 20px;
+padding-bottom: 15px;
+}
+.delete{
+  background-color: #f00;
+}
+.user_id{
+  padding-top: 5px;
+  padding-bottom: 15px;
+}

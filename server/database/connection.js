@@ -15,6 +15,7 @@ require('env2')('./config.env')
 //   default:
 //     throw new Error('NO DATABASE to show!');
 // }
+
 const options = {
     connectionString: process.env.DB_URL,
      ssl:false
