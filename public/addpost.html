@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/sign.css">
 </head>
 <body>
-    <div class="form-popup" id="myForm">
-        <form action="/post-data" class="form-container" method='POST'>
-          <h3 class= 'form-title'>Add Post</h1>
+  <div class="from add">
+    <h3 class="login">Add Post</h3>
+    <div class="form-desgin">
+        <form action="/post-data" class="form-container from" method='POST'> 
+         
   
-          <label for="title"><b>titel</b></label>
+          <label for="title" class="lables-add"><b>titel</b></label>
           <input
             type="text"
             placeholder="Enter title"
@@ -20,7 +23,7 @@
             required
           />
   
-          <label for="discription"><b>discription</b></label>
+          <label for="discription" class="lables-add"><b>discription</b></label>
           <input
             type="text"
             placeholder="Enter discription"
@@ -28,7 +31,7 @@
             id="discription"
             required
           />
-          <label for="image"><b>image</b></label>
+          <label for="image" class="lables-add"><b>image</b></label>
           <input
             type="text"
             placeholder="Enter Painting Url"
@@ -39,5 +42,8 @@
   
           <button type="submit" class="btn add-post" onclick="closeForm()">Add</button>
         </form>
+        </div>
+        </div>
+        
 </body>
 </html>

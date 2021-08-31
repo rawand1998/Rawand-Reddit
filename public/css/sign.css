@@ -138,3 +138,10 @@
     font-size: 15px;
     padding-bottom: 15px;
   }
+  .lables-add{
+    padding-bottom: 25px;
+  }
+  .add{
+    margin-left: 25%;
+    height: 80vh;
+  }
