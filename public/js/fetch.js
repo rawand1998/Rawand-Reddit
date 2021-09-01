@@ -2,7 +2,7 @@
 const CreateHomeCards = (array) => {
     for (let i = 0; i < array.length; i += 1) {
       
-      createCards(array[i].title, array[i].discription, array[i].name,array[i].image);
+      createCards(array[i].title, array[i].discription, array[i].name,array[i].image,array[i].deleted);
     }
   };
 
