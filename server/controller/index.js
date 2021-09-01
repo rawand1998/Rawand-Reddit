@@ -122,7 +122,14 @@ router.get('/check-user', auth, (req, res) => {
     res.redirect('/');
   })
   router.get('/delete',(req,res)=>{
-    deleted()
+    const cookies = req.cookies.access_token;
+   
+  const decoded = jwt.decode(cookies);
+  console.log(decoded)
+  const postId =decoded.id;
+   
+    
+    deleted(postId)
     .then(() => res.redirect('/'))
     .catch((error) => {
      console.log(error)
