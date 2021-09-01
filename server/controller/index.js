@@ -10,7 +10,7 @@ const router = require('express').Router();
  const auth = require('./utiles/authHandle')
  const signUpValiadtion = require('../utils/valiadtion/signUpValiadtion')
  const signinValiadtion = require('../utils/valiadtion/signInValiadtion')
-const {getData ,postData ,signHandle,signUpHandel}= require('../database/queries/index');
+const {getData ,postData ,signHandle,signUpHandel,deleted}= require('../database/queries/index');
 
 
 
@@ -120,5 +120,12 @@ router.get('/check-user', auth, (req, res) => {
   router.get('/logout',(req,res)=>{
     res.clearCookie('access_token');
     res.redirect('/');
+  })
+  router.get('/delete',(req,res)=>{
+    deleted()
+    .then(() => res.redirect('/'))
+    .catch((error) => {
+     console.log(error)
+    });
   })
 module.exports =router;
