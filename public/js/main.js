@@ -12,7 +12,7 @@ const createElement = (tag, className, parentNode) => {
 };
 
 // eslint-disable-next-line no-unused-vars
-const createCards = (title, discription,user_id ,deleted)=> {
+const createCards = (title, discription,user_id ,deleted,comment)=> {
   const card = createElement('div', 'posts', cardsContainer);
   const user_id1 = createElement('h3', 'user_id', card);
   user_id1.textContent = user_id;
@@ -25,6 +25,10 @@ const createCards = (title, discription,user_id ,deleted)=> {
   const deleted1 = createElement('a','delete',card)
   deleted1.textContent='deleted';
   deleted1.href='/delete'
+  const comment1 = createElement('a','comment',card)
+  comment1.textContent='comment'
+  comment1.href='/comment'
+
  
 
 };
