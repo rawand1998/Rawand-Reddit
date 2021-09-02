@@ -1,6 +1,6 @@
-const connection = require('../connection')
-const getComment =(postId)=>{
-    return connection.query('select content ,name from comment inner join users on(comment.users_id =users.id) where comment.post_id =$1',[postId])
+// const connection = require('../connection')
+// const getComment =()=>{
+//     return connection.query('select content ,name from comment inner join users on(comment.user_id =users.id)')
 
-}
-module.exports= getComment
+// }
+// module.exports= getComment
