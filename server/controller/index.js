@@ -135,28 +135,25 @@ router.get('/check-user', auth, (req, res) => {
      console.log(error)
     });
   })
-  router.post('/comment',(req,res)=>{
-    addComment()
-    .then((res)=>res.redirect('/'))
-    .catch((error)=>console.log(error))
+  // router.post('/comment',(req,res)=>{
+  //   const cookies = req.cookies.access_token;
+   
+  //   const decoded = jwt.decode(cookies);
+  //   console.log(decoded)
+  //   const user_id =decoded.id;
+  //   addComment(content,user_id)
+  //   .then((res)=>res.redirect('/'))
+  //   .catch((error)=>console.log(error))
 
-  })
-  router.get('/comment',(req,res)=>{
-    const { postId } = req.params;
-   console.log(postId)
-    getComment(postId)
-   .then((data) => data.rows)
-    .then((comments) => {
-      res.json(comments);
-    })
-    .catch(() => {
-      res.status(500).json(
-        {
-          msg: 'Internal Server Error',
-          status: 500,
-        },
-      );
-    });
+  // })
+  // router.get('/comment',(req,res)=>{
+   
+  //   getComment()
+  //  .then((data) => data.rows)
+   
+  //   .catch((error) => {
+  //    console.log(error)
+  //   });
 
-  })
+  // })
 module.exports =router;

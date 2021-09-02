@@ -1,6 +1,6 @@
-const connection = require('../connection')
-const addComment = (content,post_id,user_id)=>{
-    return connection.query('INSERT INTO comment (content,post_id,user_id) values($1,$2,$3)',[content,post_id,user_id])
+// const connection = require('../connection')
+// const addComment = (content,user_id)=>{
+//     return connection.query('INSERT INTO comment (content,user_id) values($1,$2)',[content,user_id])
 
-}
-module.exports=addComment
+// }
+// module.exports=addComment

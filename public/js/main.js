@@ -25,9 +25,12 @@ const createCards = (title, discription,user_id ,deleted,comment)=> {
   const deleted1 = createElement('a','delete',card)
   deleted1.textContent='deleted';
   deleted1.href='/delete'
-  const comment1 = createElement('a','comment',card)
-  comment1.textContent='comment'
-  comment1.href='/comment'
+ 
+//  const commentard = createElement('div','commentCard',card)
+//  commentard.textContent=comment
+ const comment1 = createElement('a','comment',card)
+comment1.textContent='comment'
+ comment1.href='/comment'
 
  
 
