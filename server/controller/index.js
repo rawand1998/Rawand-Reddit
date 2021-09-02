@@ -10,7 +10,7 @@ const router = require('express').Router();
  const auth = require('./utiles/authHandle')
  const signUpValiadtion = require('../utils/valiadtion/signUpValiadtion')
  const signinValiadtion = require('../utils/valiadtion/signInValiadtion')
-const {getData ,postData ,signHandle,signUpHandel,deleted}= require('../database/queries/index');
+const {getData ,postData ,signHandle,signUpHandel,deleted,addComment,getComment}= require('../database/queries/index');
 
 
 
@@ -134,5 +134,29 @@ router.get('/check-user', auth, (req, res) => {
     .catch((error) => {
      console.log(error)
     });
+  })
+  router.post('/comment',(req,res)=>{
+    addComment()
+    .then((res)=>res.redirect('/'))
+    .catch((error)=>console.log(error))
+
+  })
+  router.get('/comment',(req,res)=>{
+    const { postId } = req.params;
+   console.log(postId)
+    getComment(postId)
+   .then((data) => data.rows)
+    .then((comments) => {
+      res.json(comments);
+    })
+    .catch(() => {
+      res.status(500).json(
+        {
+          msg: 'Internal Server Error',
+          status: 500,
+        },
+      );
+    });
+
   })
 module.exports =router;
