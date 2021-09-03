@@ -19,7 +19,6 @@ CREATE TABLE comment (
     post_id INTEGER REFERENCES post(id), 
     user_id INTEGER REFERENCES users(id)
 );
-INSERT INTO users (name,password,email) VALUES ('RAWANDHOSAM','159','RAAND@gmail.com');
-INSERT INTO post(title,discription,user_id) VALUES ('RAWAND','ONJHGVFCGHBJ',1);
+
 
 COMMIT;

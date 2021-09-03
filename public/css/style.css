@@ -19,7 +19,7 @@ body{
 }
 .reddit-logo {
   font-family: cursive;
-  color: #000;
+  color: rgb(247, 31, 31);
   text-indent: 10px;
 }
 .site-header__wrapper {
@@ -151,6 +151,7 @@ color: #fff;
   margin-top: 3%;
 }
 .post-content{
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -190,11 +191,7 @@ color: #fff;
   font-weight: bold;
   color: rgb(158, 158, 158);
 }
-.vv{
-  background-color: salmon;
-  width: 30%;
-  height: 20px;
-}
+
 .image{
 width: 100%;
 height: 400px;
@@ -206,13 +203,13 @@ padding-bottom: 15px;
 font-size: 20px;
 }
 .posts{
-border: 1px solid #777;
+border: 1px solid #dddd;
 padding-left: 15px;
 padding-right: 15px;
 }
 .discription{
 font-weight: 208;
-font-size: 18px;
+font-size: 15px;
 padding-bottom: 15px;
 color: #777;
 }
@@ -220,6 +217,7 @@ color: #777;
 color: #f00;
   padding-right: 25px;
   text-decoration: none;
+  font-weight: bold;
 }.delete:hover{
   color: rgb(131, 0, 0);
 }
@@ -230,6 +228,87 @@ color: #f00;
 }
 
 .comment{
-  color: #000;
+  color: rgb(0, 121, 211);
   text-decoration: none;
+  font-weight: bold;
+}
+
+.side{
+  display: flex;
+  flex-direction: column;
+
+width: 28%;
+margin-left: 2%;
+}
+.about{
+  display: flex;
+  flex-direction: column;
+ border: 1px solid #dddd;
+  height: 170px;
+  margin-top: 4%;
+
+}
+.title-about{
+  text-align: center;
+  padding-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: rgb(250, 0, 12);
+}
+.reddit-about{
+  padding-left: 10px;
+  padding-top: 10px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #1C1C1C;
+}
+.btn-try
+{
+  border: none;
+  border-radius: 25px;
+  background-color: rgb(250, 0, 12);
+  padding: 10px;
+  margin: 10px;
+  color: #ddd;
+}
+.concat{
+  margin-top: 5%;
+  border: 1px solid #dddd;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+ 
+}
+.nav-concat{
+  list-style: none;
+
+ 
+}
+.li-conatct{
+  border-bottom: 1px solid #ddd;
+  padding: 15px 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.services{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid #dddd;
+  margin-top: 5%;
+  background-color: #fff;
+
+  
+}
+.serv-nav
+{
+  color: #1c1c11;
+  padding-left: 15px;
+  padding-right: 20px;
+ padding-bottom: 8px;
+
+
+}
+.main{
+  padding-top: 15px;
 }
