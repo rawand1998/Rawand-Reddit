@@ -16,7 +16,7 @@ CREATE TABLE post (
 CREATE TABLE comment (
     id SERIAL PRIMARY KEY,
     content VARCHAR(100),
-    post_id INTEGER REFERENCES post(id), 
+    -- post_id INTEGER REFERENCES post(id), 
     user_id INTEGER REFERENCES users(id)
 );
 
