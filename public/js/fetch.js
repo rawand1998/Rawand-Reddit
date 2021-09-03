@@ -1,11 +1,16 @@
 
+
 const CreateHomeCards = (array) => {
     for (let i = 0; i < array.length; i += 1) {
       
       createCards(array[i].title, array[i].discription, array[i].name,array[i].image,array[i].deleted,array[i].comment);
     }
   };
-
+const createComment =(array)=>{
+  for (let i = 0; i < array.length; i += 1) {
+    createComments(array[i].name,array[i].content)
+  }
+}
   fetch('/post')
   .then((respond) => respond.json())
     .then((res) => {
@@ -17,3 +22,9 @@ const CreateHomeCards = (array) => {
 fetch('/check-user').then((respond) => respond.json()).then((name) => {
   createNavBar(name);
 });
+fetch('/getComment')
+.then((respond) => respond.json())
+.then((res)=>{
+  createComment(res)
+  .catch(()=>console.log)
+})

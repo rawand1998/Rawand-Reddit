@@ -25,14 +25,17 @@ router.get('/post', (req, res) => {
 
   
 router.post('/post-data', (req, res) => {
+  
+  console.log(post_id)
   const cookies = req.cookies.access_token;
    
   const decoded = jwt.decode(cookies);
-  console.log(decoded)
+ 
   const user_id =decoded.id;
  
 postData(req.body.title,req.body.discription,user_id,req.body.image)
 
+    
     .then(()=>res.redirect('/'))
     .catch((error)=>{console.log(error)})
 });
@@ -122,38 +125,42 @@ router.get('/check-user', auth, (req, res) => {
     res.redirect('/');
   })
   router.get('/delete',(req,res)=>{
+
     const cookies = req.cookies.access_token;
    
   const decoded = jwt.decode(cookies);
   console.log(decoded)
   const postId =decoded.id;
    
-    
     deleted(postId)
     .then(() => res.redirect('/'))
     .catch((error) => {
      console.log(error)
     });
   })
-  // router.post('/comment',(req,res)=>{
-  //   const cookies = req.cookies.access_token;
-   
-  //   const decoded = jwt.decode(cookies);
-  //   console.log(decoded)
-  //   const user_id =decoded.id;
-  //   addComment(content,user_id)
-  //   .then((res)=>res.redirect('/'))
-  //   .catch((error)=>console.log(error))
 
-  // })
-  // router.get('/comment',(req,res)=>{
-   
-  //   getComment()
-  //  .then((data) => data.rows)
-   
-  //   .catch((error) => {
-  //    console.log(error)
-  //   });
 
-  // })
+  router.post('/getComment',(req,res)=>{
+    const cookies = req.cookies.access_token;
+    const decoded = jwt.decode(cookies);
+    const user_id =decoded.id;
+    console.log(req.body.content)
+    addComment(req.body.content,user_id)
+    .then(()=>res.redirect('/'))
+    .catch((error)=>console.log(error))
+
+  })
+  router.get('/getComment',(req,res)=>{
+   
+    getComment()
+   .then((data) => data.rows)
+    .catch((error) => {
+     console.log(error)
+    });
+
+   })
+
+  router.get('/comment',(req,res)=>{
+    res.sendFile(join(__dirname,'..','..','public','addcomment.html'))
+  })
 module.exports =router;

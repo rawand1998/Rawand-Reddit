@@ -4,6 +4,8 @@ const navBar = document.querySelector('.nav-bar');
 const form = document.querySelector('form');
 const error = document.querySelector('.error')
 const password = document.querySelector('#password')
+const comment = document.querySelector('.comment')
+
 const createElement = (tag, className, parentNode) => {
   const tagName = document.createElement(tag);
   tagName.classList.add(className);
@@ -35,8 +37,16 @@ comment1.textContent='comment'
  
 
 };
+
+const createComments= (content,user_id)=>{
+  const contentComment = createElement('p','comments',comment)
+  contentComment.textContent=content
+  const names = createElement('h4','names',comment)
+  names.textContent= user_id
+ 
+}
 const createNavBar = (title) => {
-  navBar.textContent = '';
+   navBar.textContent = '';
   const logOut = document.createElement('a');
   logOut.href = '/logout';
   logOut.textContent = 'Log out';
