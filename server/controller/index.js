@@ -151,13 +151,9 @@ router.get('/check-user', auth, (req, res) => {
 
   })
   router.get('/getComment',(req,res)=>{
-   
     getComment()
-   .then((data) => data.rows)
-    .catch((error) => {
-     console.log(error)
-    });
-
+    .then((result) => res.json(result))
+    .catch((err) => err);
    })
 
   router.get('/comment',(req,res)=>{

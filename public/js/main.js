@@ -22,40 +22,31 @@ const createCards = (title, discription,user_id ,deleted,comment)=> {
   title1.textContent = title;
   const discription1 = createElement('p', 'discription', card);
   discription1.textContent = discription;
-  // const img = createElement('img', 'image', card);
-  // img.src = image;
   const deleted1 = createElement('a','delete',card)
   deleted1.textContent='deleted';
   deleted1.href='/delete'
- 
-//  const commentard = createElement('div','commentCard',card)
-//  commentard.textContent=comment
  const comment1 = createElement('a','comment',card)
-comment1.textContent='comment'
+ comment1.textContent='comment'
  comment1.href='/comment'
-
- 
-
 };
 
 const createComments= (content,user_id)=>{
   const contentComment = createElement('p','comments',comment)
   contentComment.textContent=content
-  const names = createElement('h4','names',comment)
-  names.textContent= user_id
- 
+  const name = createElement('h4','names',comment)
+  name.textContent= user_id
 }
+
+
 const createNavBar = (title) => {
    navBar.textContent = '';
-  const logOut = document.createElement('a');
+  const logOut = createElement('a','btn-sign',navBar);
   logOut.href = '/logout';
   logOut.textContent = 'Log out';
-  logOut.classList.add('btn-sign');
-  const username = document.createElement('h4');
+
+  const username = createElement('h4','btn-sign',navBar);
   username.textContent = title;
-  username.classList.add('btn-sign');
-  navBar.appendChild(logOut);
-  navBar.appendChild(username);
+
 };
 form.addEventListener('submit',(e)=>{
   if (password.value.length < 6) {

@@ -1,0 +1,30 @@
+.comment-form{
+    margin-left: 35%;
+  
+
+}
+.comment-form input{
+    padding: 10px 50px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+.comment-title
+{
+    
+    text-align: center;
+    padding-top: 70px;
+}
+.comment-btn{
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 10px 20px;
+    
+}
+.comment{
+    background-color: blue;
+    
+}
+.comments{
+    color: brown;
+    font-size: 20px;
+}

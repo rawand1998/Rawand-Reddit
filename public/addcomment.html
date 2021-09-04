@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=
     , initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Comment</title>
+    <link rel="stylesheet" href="css/addComment.css">
 
 </head>
 <body>
- <form action="/getComment" method="POST">
-    <input type="text" placeholder="enter comment">
-    <input type="submit">
+    <h1 class="comment-title">Add Comment</h1>
+ <form action="/getComment" method="POST" class="comment-form">
+    <input type="text" placeholder="Enter Comment" name="content">
+    <button class="comment-btn">Submit</button>
 </form>
-<div class="comment"></div>
+<div class="comment">
+    
+</div>
 
 <script src="./js/main.js"></script>
 <script src="./js/fetch.js"></script>
